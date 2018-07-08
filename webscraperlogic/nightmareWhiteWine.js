@@ -6,19 +6,17 @@ const nightmare = Nightmare({
 });
 
 var run = function * () {
-  yield nightmare.goto('https://www.vivino.com/explore?e=eJzLLbI11jNVy83MszVSy02ssDW2VEuutC0tVku2DQ12USuwNVRLT7MtSyzKTC1JzFHLTbZVy08CYtuU1OJktfKS6FigimLbtBwAZR8XvQ==').wait(8000);
+  yield nightmare.goto('https://www.vivino.com/explore?e=eJzLLbI11jNVy83MszVSy02ssDW2VEuutC0tVku2DQ12USuwNVRLT7MtSyzKTC1JzFHLTbZVy08CYtuU1OJktfKS6FigxmLbtBwAZSUXvg==').wait(8000);
 
   //Declare the current & previous heights as variables so we can compare them
-  let previousHeight;
-  let currentHeight = 0;
-  //The height changes after a couple of seconds after scrolling to the bottom, so we won't 'bottom out' until the previous height matches the current height.  We'll keep running this fx until that occurs
-  while(previousHeight !== currentHeight) {
+  var previousHeight, currentHeight=0;
+  //The height changes after a couple of seconds after scrolling to the bottom, so we won't 'bottom out' until the previous height matches the current height.  We'll keep running this fx until that occurs OR until the height reaches 100000px, because that's probably enough
+  while((previousHeight !== currentHeight) && (currentHeight < 100000)) {
     previousHeight = currentHeight;
-    let currentHeight = yield nightmare.evaluate(function() {
-        //Return the new height of the page
-        return document.body.scrollHeight;
+    var currentHeight = yield nightmare.evaluate(function() {
+      return document.body.scrollHeight;
     });
-    //Scroll down again and wait 3 seconds for the page to load
+    console.log(currentHeight);
     yield nightmare.scrollTo(currentHeight, 0)
       .wait(3000);
   }
@@ -36,7 +34,7 @@ var run = function * () {
             wine["winery"] = $(this).children().eq(1).find('span').eq(0).text();
             wine["name"] = $(this).children().eq(1).find('span').eq(1).text();
             wine["link"] = $(this).find('a').attr("href");
-            wine["type"] = "red";
+            wine["type"] = "white";
             wine["rating"] = $(this).children().eq(1).find('span').eq(3).text();
             wine["price"] = $(this).children().eq(1).find('span').eq(5).text();
             wine["country"] = $(this).children().eq(1).find('a').eq(2).text();
