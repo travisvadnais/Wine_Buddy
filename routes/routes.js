@@ -11,7 +11,7 @@ router.get("/scrape", function(req, res) {
         const $ = cheerio.load(body);
 
         $(".explorerCard__rightColumn--1ZpZ7").each(function(i, element) {
-            let title = $(".explorerCard__rightColumn--1ZpZ7").children().first().html();
+            let title = $(".navigation__menu").children().children().text();
             console.log(title);
         })
     })
