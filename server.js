@@ -7,7 +7,7 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 var allRoutes = require("./routes/routes.js");
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/news_scraper";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/wine_buddy";
 
 
 
@@ -23,11 +23,8 @@ app.use('/', allRoutes);
 
 //====================== End Express Stuff ========================//
 
-//mongoose.Promise = Promise;
-//mongoose.connect(MONGODB_URI).catch(err => console.log(err));
-
-//Link up w/ MongoDB
-//mongoose.connect("mongodb://localhost/news_scraper");
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI).catch(err => console.log(err));
 
 //Start Server
 app.listen(PORT, function() {
