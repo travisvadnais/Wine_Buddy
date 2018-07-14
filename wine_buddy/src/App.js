@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import Nav from './components/Nav/Nav.js'
-import logo from './logo.svg';
+import Nav from './components/Nav/Nav.js';
+import InstructionCard from './components/InstructionCard/InstructionCard.js';
+import instructions from './components/InstructionCard/InstructionInfo.json';
+import Button from './components/Button/Button.js';
+import Footer from './components/Footer/Footer.js';
 import './App.css';
 
 class App extends Component {
@@ -8,15 +11,23 @@ class App extends Component {
     return (
       <div>
         <Nav />
-        <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
-          </header>
-          <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
-          </p>
+        {/* I built this class stack in another HW and it works for this type of thing */}
+        <div className="d-flex flex-wrap justify-content-center col-sm-12 mx-auto carousel">
+          {
+            instructions
+            .map(instruction => (
+              <InstructionCard
+                id={instruction.id}
+                key={instruction.id}
+                step={instruction.step}
+                img={instruction.img}
+                alt={instruction.desc}
+              />
+            ))
+          }
         </div>
+        <Button />
+        <Footer />
       </div>
     );
   }

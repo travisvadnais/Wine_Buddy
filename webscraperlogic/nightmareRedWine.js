@@ -2,7 +2,8 @@ const Nightmare = require('nightmare');
 //This package helps manage all the promises when trying to scroll to the bottom of the page
 const vo = require('vo');
 const nightmare = Nightmare({
-  show: true
+    //This will show the electron browser window
+    show: true
 });
 const db = require('../models/index.js');
 
@@ -46,22 +47,24 @@ var run = function * () {
             
             //Push the wine object into the wines array
             wines.push(wine);
+            
         })
         return wines;
     })
-    
+       
     //Once it's done, end the fx and log the list of wines. NOTE: Console will only display the first 100.
     .end()
     .then(function(wines) {
+        console.log(wines);
+        console.log(`Added ${wines.length} wines`)
         db.Wine.insertMany(wines, {ordered: false, rawResult: false}, (err, docs) => {
             if (err) throw err
         })
-        console.log(wines);
     })
 };
 
 //This will actually run the nightmare function.
 vo(run)(function(err) {
-  console.dir(err);
-  console.log('done');
+  if (err) throw err;
+  else{console.log('done');}
 });

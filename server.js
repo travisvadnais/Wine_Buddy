@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3010;
 var logger = require("morgan");
 var mongoose = require("mongoose");
 var allRoutes = require("./routes/routes.js");
-
+const db = mongoose.connection;
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/wine_buddy";
 
 
@@ -25,6 +25,7 @@ app.use('/', allRoutes);
 
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI).catch(err => console.log(err));
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 //Start Server
 app.listen(PORT, function() {
