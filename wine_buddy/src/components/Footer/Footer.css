@@ -1,0 +1,44 @@
+nav.fixed-bottom {
+  height: 70px;
+  width: 100%;
+  background-color: black!important;
+  border-top: 2px solid darkgoldenrod;
+  color: darkgoldenrod;
+}
+
+/* nav.fixed-bottom a {
+  color: whitesmoke!important;
+} */
+
+div#footer-left {
+  float: left;
+  width: 60%;
+}
+
+div#footer-right {
+  float: right;
+  width: 40%;
+  text-align: right;
+}
+
+div#footer-left p, div#footer-right p {
+  margin-top: 10px;
+}
+
+div#footer-left p {
+  margin-left: 30px;
+}
+
+div#footer-right p {
+  margin-right: 10%;
+}
+
+.footer_p {
+  display: inline;
+}
+
+img.footer_p {
+  width: 20px;
+  height: 20px;
+  margin-right: -10px;
+}

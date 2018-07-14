@@ -1,0 +1,20 @@
+[
+    {
+        "id": 0,
+        "step": "Step 1: Select Your Entree!",
+        "img": "https://www.ediblemanhattan.com/wp-content/uploads/2015/07/CookUnity-Table-photo.jpg",
+        "desc": "Dinner Options"
+    },
+    {
+        "id": 1,
+        "step": "Step 2: Select Your Price Range!",
+        "img": "https://www.thebalance.com/thmb/NgBJysSgqYvUVSMa01v2CRo--FY=/300x200/filters:saturation(0.2):brightness(10):contrast(5):no_upscale()/GettyImages-sb10065817hh-001-577043fa5f9b585875b714fa.jpg",
+        "desc": "House of Coins"
+    },
+    {
+        "id": 2,
+        "step": "Step 3: Enjoy!",
+        "img": "http://chefsblade.monster.com/nfs/chefsblade/attachment_images/0000/0270/shutterstock_3122239_crop380w.jpg?1225313338",
+        "desc": "Date Night"
+    }
+]
