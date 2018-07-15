@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import Nav from "../../components/Nav";
 import Footer from '../../components/Footer';
 import './Wine.css';
+import foodPairs from './foods.json';
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
-
-
 
 
 class Wine extends Component {

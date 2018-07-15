@@ -1,0 +1,86 @@
+[
+    {
+        "food": "vegetables",
+        "wines": [
+            {"dry_whites": ["Sauvignon Blanc", "Pinot Grigio"]},
+            {"sparkling_whites": ["Champagne", "Prosecco", "Cava"]}
+        ]
+    },
+    {
+        "food": "soft cheese",
+        "wines": [
+            {"sweet_whites": ["Moscato", "Riesling"]},
+            {"rich_whites": ["Chardonnay"]},
+            {"sparkling_whites":["Champagne", "Prosecco", "Cava"]},
+            {"dessert": ["Dessert"]}
+        ]
+    },
+    {
+        "food": "hard cheese",
+        "wines": [
+            {"sweet_whites": ["Moscato", "Riesling"]},
+            {"sparkling_whites":["Champagne", "Prosecco", "Cava"]},
+            {"medium_body_reds": ["Tempranillo", "Zinfandel", "Merlot", "Sangiovese"]},
+            {"full_body_reds": ["Cabernet Sauvignon", "Malbec", "Syrah"]}
+        ]
+    },
+    {
+        "food": "starches (grains & pastas)",
+        "wines": [
+            {"dry_whites": ["Sauvignon Blanc", "Pinot Grigio"]},
+            {"rich_whites": ["Chardonnay"]},
+            {"sparkling_whites":["Champagne", "Prosecco", "Cava"]},
+            {"light_body_reds": ["Pinot Noir"]},
+            {"medium_body_reds": ["Tempranillo", "Zinfandel", "Merlot", "Sangiovese"]},
+            {"full_body_reds": ["Cabernet Sauvignon", "Malbec", "Syrah"]},
+            {"dessert": ["Dessert"]}
+        ]
+    },
+    {
+        "food": "light seafood",
+        "wines": [
+            {"sweet_whites": ["Moscato", "Riesling"]},
+            {"rich_whites": ["Chardonnay"]},
+            {"sparkling_whites":["Champagne", "Prosecco", "Cava"]}
+        ]
+    },
+    {
+        "food": "rich seafood",
+        "wines": [
+            {"rich_whites": ["Chardonnay"]},
+            {"light_body_reds": ["Pinot Noir"]}
+        ]
+    },
+    {
+        "food": "white meat",
+        "wines": [
+            {"dry_whites": ["Sauvignon Blanc", "Pinot Grigio"]},
+            {"rich_whites": ["Chardonnay"]},
+            {"light_body_reds": ["Pinot Noir"]},
+            {"medium_body_reds": ["Tempranillo", "Zinfandel", "Merlot", "Sangiovese"]}
+        ]
+    },
+    {
+        "food": "red meat",
+        "wines": [
+            {"medium_body_reds": ["Tempranillo", "Zinfandel", "Merlot", "Sangiovese"]},
+            {"full_body_reds": ["Cabernet Sauvignon", "Malbec", "Syrah"]}
+        ]
+    },
+    {
+        "food": "cured meat",
+        "wines": [
+            {"sweet_whites": ["Moscato", "Riesling"]},
+            {"light_body_reds": ["Pinot Noir"]},
+            {"medium_body_reds": ["Tempranillo", "Zinfandel", "Merlot", "Sangiovese"]},
+            {"full_body_reds": ["Cabernet Sauvignon", "Malbec", "Syrah"]}
+        ]
+    },
+    {
+        "food": "sweets",
+        "wines": [
+            {"sweet_whites": ["Moscato", "Riesling"]},
+            {"dessert": ["Dessert"]}
+        ]
+    }
+]
