@@ -5,18 +5,19 @@ const nightmare = Nightmare({
     //This will show the electron browser window
     show: true
 });
+const fs = require('fs');
 const db = require('../models/index.js');
 
 
 var run = function * () {
-  yield nightmare.goto('https://www.vivino.com/explore?e=eJzLLbI11jNVy83MszVSy02ssDW2VEuutC0tVku2DQ12USuwNVRLT7MtSyzKTC1JzFHLTbZVy08CYtuU1OJktfKS6FigimLbtBwAZR8XvQ==').wait(8000);
+  yield nightmare.goto('https://www.vivino.com/explore?e=eJzLLbI11jNVy83MszU0MFPLTaywNTUwUEuutC0tVku2DQ12USuwNVRLT7MtSyzKTC1JzFHLTbZVy08CYtuU1OJktfKS6FigimLbtBwAlDkYSw==').wait(8000);
 
   //Declare the current & previous heights as variables so we can compare them
   var previousHeight;
   var currentHeight = 0;
   //The height changes after a couple of seconds after scrolling to the bottom, so we won't 'bottom out' until the previous height matches the current height.  We'll keep running this fx until that occurs
   //The currentHeight check should be set to 100,000 in production.  10,000 is just for testing.
-  while((previousHeight !== currentHeight) && (currentHeight < 10000)) {
+  while((previousHeight !== currentHeight) && (currentHeight < 950000)) {
     previousHeight = currentHeight;
     var currentHeight = yield nightmare.evaluate(function() {
         //Return the new height of the page
@@ -55,11 +56,16 @@ var run = function * () {
     //Once it's done, end the fx and log the list of wines. NOTE: Console will only display the first 100.
     .end()
     .then(function(wines) {
+        var jsonWines = JSON.stringify(wines)
         console.log(wines);
         console.log(`Added ${wines.length} wines`)
-        db.Wine.insertMany(wines, {ordered: false, rawResult: false}, (err, docs) => {
-            if (err) throw err
-        })
+        // db.Wine.insertMany(wines, {ordered: false, rawResult: false}, (err, docs) => {
+        //     if (err) throw err
+        // })
+        
+    
+        fs.appendFileSync('./redWines/106-500.json', jsonWines);
+        
     })
 };
 

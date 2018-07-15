@@ -4,15 +4,16 @@ const vo = require('vo');
 const nightmare = Nightmare({
   show: true
 });
+const fs = require('fs');
 
 var run = function * () {
-  yield nightmare.goto('https://www.vivino.com/explore?e=eJzLLbI11jNVy83MszVSy02ssDW2VEuutC0tVku2DQ12USuwNVRLT7MtSyzKTC1JzFHLTbZVy08CYtuU1OJktfKS6Fhbc7Vi27QcAGVDF8M=').wait(8000);
+  yield nightmare.goto('https://www.vivino.com/explore?e=eJzLLbI11jNVy83MszVQy02ssDU1MFBLrrQtLVZLtg0NdlErsDVUS0-zLUssykwtScxRy022VctPAmLblNTiZLXykuhYW3O1Ytu0HABzVxfq').wait(8000);
 
   //Declare the current & previous heights as variables so we can compare them
   var previousHeight;
   var currentHeight = 0;
   //The height changes after a couple of seconds after scrolling to the bottom, so we won't 'bottom out' until the previous height matches the current height.  We'll keep running this fx until that occurs
-  while((previousHeight !== currentHeight) && (currentHeight < 100000)) {
+  while((previousHeight !== currentHeight) && (currentHeight < 950000)) {
     previousHeight = currentHeight;
     var currentHeight = yield nightmare.evaluate(function() {
         //Return the new height of the page
@@ -29,14 +30,12 @@ var run = function * () {
     .evaluate(function() {
         //All the wines we scrape will get shoved into this array
         let wines = [];
-        let counter = 1;
         //This is the class for each of the wine 'cards' on Vivino I suspect this class may change periodically; but every property we pull into the objects is based on a relative DOM path - so we'll only need to update the one class name when we scrape//
         $('.explorerPageResults__explorerCard--3q6Qe').each(function(){
             wine = {};
-            wine["_number"] = counter;
             wine["winery"] = $(this).children().eq(1).find('span').eq(0).text();
             wine["name"] = $(this).children().eq(1).find('span').eq(1).text();
-            wine["link"] = $(this).find('a').attr("href");
+            wine["url"] = $(this).find('a').attr("href");
             wine["type"] = "dessert";
             wine["rating"] = $(this).children().eq(1).find('span').eq(3).text();
             wine["price"] = $(this).children().eq(1).find('span').eq(5).text();
@@ -45,14 +44,21 @@ var run = function * () {
             
             //Push the wine object into the wines array
             wines.push(wine);
-            counter++;
         })
         return wines;
     })
     //Once it's done, end the fx and log the list of wines. NOTE: Console will only log 100 in the array.
     .end()
     .then(function(wines) {
+        var jsonWines = JSON.stringify(wines)
         console.log(wines);
+        console.log(`Added ${wines.length} wines`)
+        // db.Wine.insertMany(wines, {ordered: false, rawResult: false}, (err, docs) => {
+        //     if (err) throw err
+        // })
+        
+    
+        fs.appendFileSync('./dessertWines/all.json', jsonWines);
     })
 };
 
