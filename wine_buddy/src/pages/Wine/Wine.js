@@ -2,18 +2,31 @@ import React, { Component } from "react";
 import Nav from "../../components/Nav";
 import Footer from '../../components/Footer';
 import './Wine.css';
+import Dropdown from '../../components/Dropdown';
 import foodPairs from './foods.json';
 import API from "../../utils/API";
-import { Link } from "react-router-dom";
 
+const foods = [];
+
+foodPairs.forEach(food => {
+    foods.push(food.food);
+});
+console.log(foods);
 
 class Wine extends Component {
     render() {
         return (
             <div>
                 <Nav />
-                {/* I built this class stack in another HW and it works for this type of thing */}
-                <h3>This is Where the User will start the wine-pairing questions</h3>
+                <form onSubmit={this.handleSubmit}>
+                    <label>
+                        Let's find you a wine!
+                        <br />
+                        <Dropdown placeholder={"Select The Star of Your Dish!"} />
+                    </label>
+                    <br />
+                    <input type="submit" value="Submit" />
+                </form>
                 <Footer />
             </div>
         );
