@@ -1,13 +1,13 @@
 [
     {
-        "food": "vegetables",
+        "food": "Vegetables",
         "wines": [
             {"dry_whites": ["Sauvignon Blanc", "Pinot Grigio"]},
             {"sparkling_whites": ["Champagne", "Prosecco", "Cava"]}
         ]
     },
     {
-        "food": "soft cheese",
+        "food": "Soft Cheese",
         "wines": [
             {"sweet_whites": ["Moscato", "Riesling"]},
             {"rich_whites": ["Chardonnay"]},
@@ -16,7 +16,7 @@
         ]
     },
     {
-        "food": "hard cheese",
+        "food": "Hard Cheese",
         "wines": [
             {"sweet_whites": ["Moscato", "Riesling"]},
             {"sparkling_whites":["Champagne", "Prosecco", "Cava"]},
@@ -25,7 +25,7 @@
         ]
     },
     {
-        "food": "starches (grains & pastas)",
+        "food": "Starches (Grains & Pastas)",
         "wines": [
             {"dry_whites": ["Sauvignon Blanc", "Pinot Grigio"]},
             {"rich_whites": ["Chardonnay"]},
@@ -37,7 +37,7 @@
         ]
     },
     {
-        "food": "light seafood",
+        "food": "Light Seafood",
         "wines": [
             {"sweet_whites": ["Moscato", "Riesling"]},
             {"rich_whites": ["Chardonnay"]},
@@ -45,14 +45,14 @@
         ]
     },
     {
-        "food": "rich seafood",
+        "food": "Rich Seafood",
         "wines": [
             {"rich_whites": ["Chardonnay"]},
             {"light_body_reds": ["Pinot Noir"]}
         ]
     },
     {
-        "food": "white meat",
+        "food": "White Meat",
         "wines": [
             {"dry_whites": ["Sauvignon Blanc", "Pinot Grigio"]},
             {"rich_whites": ["Chardonnay"]},
@@ -61,14 +61,14 @@
         ]
     },
     {
-        "food": "red meat",
+        "food": "Red Meat",
         "wines": [
             {"medium_body_reds": ["Tempranillo", "Zinfandel", "Merlot", "Sangiovese"]},
             {"full_body_reds": ["Cabernet Sauvignon", "Malbec", "Syrah"]}
         ]
     },
     {
-        "food": "cured meat",
+        "food": "Cured Meat",
         "wines": [
             {"sweet_whites": ["Moscato", "Riesling"]},
             {"light_body_reds": ["Pinot Noir"]},
@@ -77,7 +77,7 @@
         ]
     },
     {
-        "food": "sweets",
+        "food": "Sweets",
         "wines": [
             {"sweet_whites": ["Moscato", "Riesling"]},
             {"dessert": ["Dessert"]}
