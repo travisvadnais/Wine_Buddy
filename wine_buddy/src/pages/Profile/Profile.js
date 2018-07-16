@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import Nav from "../../components/Nav";
 import Footer from '../../components/Footer';
 import './Profile.css';
-import API from "../../utils/API";
-import { Link } from "react-router-dom";
+// import API from "../../utils/API";
+// import { Link } from "react-router-dom";
 
 class Profile extends Component {
     render() {

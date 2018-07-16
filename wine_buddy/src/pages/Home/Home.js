@@ -5,7 +5,7 @@ import instructions from '../../components/InstructionCard/InstructionInfo.json'
 import Button from '../../components/Button';
 import Footer from '../../components/Footer';
 import './Home.css';
-import API from "../../utils/API";
+// import API from "../../utils/API";
 import { Link } from "react-router-dom";
 
 

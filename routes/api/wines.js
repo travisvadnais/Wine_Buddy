@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const winesController = require('../../controllers/wineController');
+const wineController = require('../../controllers/wineController');
 
 //Link the routes to the Controller here.  Example from a past assignment at the bottom
 
-router.route("/")
-
+router.route("/api/wine/:food")
+  .get(wineController.findAll);
 
 module.exports = router;
 

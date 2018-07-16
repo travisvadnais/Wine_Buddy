@@ -1,5 +1,9 @@
-// import axios from ('axios');
+import axios from 'axios';
 
-// export default {
+export default {
 
-// };
+  getWine: function(food) {
+    return axios.get(`/api/wine/${food}`);
+  }
+
+};
