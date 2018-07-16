@@ -1,9 +1,10 @@
 import React from 'react';
-import './Dropdown.css';
+import './FoodDropDown.css';
 import foods from '../../pages/Wine/foods.json'
 
 //Set up the dropdown list
-const Dropdown = (props) => (
+const FoodDropDown = (props) => (
+  <form>
   <select id={props.id} name={props.name} onChange={props.onChange}>
     {/* Default Option */}
     <option value="" disabled selected>{props.placeholder}</option>
@@ -12,6 +13,7 @@ const Dropdown = (props) => (
       return <option key={e.food} value={e.food}>{e.food}</option>;
     })}
   </select>
+  </form>
 )
 
-export default Dropdown;
+export default FoodDropDown;

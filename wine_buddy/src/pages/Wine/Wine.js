@@ -3,7 +3,7 @@ import Nav from "../../components/Nav";
 import Footer from '../../components/Footer';
 import './Wine.css';
 import foodPairs from '../../pages/Wine/foods.json';
-import Dropdown from '../../components/Dropdown';
+import FoodDropDown from '../../components/FoodDropDown';
 import API from "../../utils/API";
 
 //Store all the customer's choices from the forms
@@ -18,7 +18,7 @@ class Wine extends Component {
         super(props);
             // Set up the state
             this.state = {
-                formArea: <Dropdown id="food_options" name="food" placeholder="Select The Star of Your Dish!" onChange={this.handleFoodSelectionChange} />,
+                formArea: <FoodDropDown id="food_options" name="food" placeholder="Select The Star of Your Dish!" onChange={this.handleFoodSelectionChange} />,
                 Food: "Food: Select a Food!",
                 Wine_Type: "Wine Type: Select a Wine!",
                 Wine_Price: "Wine Price: Select a Price!"
@@ -70,7 +70,8 @@ class Wine extends Component {
         this.setState({
             Food: `You're Eating: ${event.target.value}`
         });
-    }
+    };
+    
 
     render() {
         return (
@@ -79,7 +80,7 @@ class Wine extends Component {
                 {/* Don't mess w/ this function.  You need the 'event' in both places to prevent
                     page from refreshing */}
                 <div id="form_container">
-                    <form onSubmit={(event)=>this.handleFoodSubmit(event, this.state.Food)}>
+                    {/* <form onSubmit={(event)=>this.handleFoodSubmit(event, this.state.Food)}> */}
                         <label>
                             Let's find you a wine!
                             <br />
@@ -89,7 +90,7 @@ class Wine extends Component {
                         <br />
                         {/* This is the "Next" button on the form */}
                         <input type="submit" value="Next" />
-                    </form>
+                    {/* </form> */}
                 </div>
                 <div id="user_inputs">
                     <ol>
