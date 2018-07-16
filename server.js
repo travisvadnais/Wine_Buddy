@@ -5,7 +5,7 @@ var bodyParser = require("body-parser");
 const PORT = process.env.PORT || 3010;
 var logger = require("morgan");
 var mongoose = require("mongoose");
-var allRoutes = require("./routes/routes.js");
+var allRoutes = require("./routes/index.js");
 const db = mongoose.connection;
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/wine_buddy";
 
