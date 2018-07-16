@@ -10,6 +10,7 @@ const Nav = props => (
         <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
                 <li className="nav-item active">
+                    {/* The 'Link to' will render the linked page */}
                     <Link to="../home"><a className="nav-link" id="go_home" href="">Home <span className="sr-only">(current)</span></a></Link>
                 </li>
                 <li className="nav-item">
