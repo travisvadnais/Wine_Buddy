@@ -9,8 +9,6 @@ import winetypes from '../../pages/Wine/winetypes';
 import foods from '../../pages/Wine/foods';
 import DropDown from '../../components/DropDown';
 
-
-
 import API from "../../utils/API";
 
 class Wine extends Component {
@@ -27,6 +25,16 @@ class Wine extends Component {
             this.handleFormSubmit = this.handleFormSubmit.bind(this);
     } 
 
+      
+        componentDidMount() {
+          this.loadWine();
+        }
+      
+        loadWine = () => {
+          API.getWines()
+            .then(res => this.setState({ foodSelection: res.data, wineSelection: res.data, priceSelection: res.data }))
+            .catch(err => console.log(err));
+        };
     //Set state when client selects a food
     handleChange = (event) => {
         const {name, value} = event.target
@@ -39,7 +47,7 @@ class Wine extends Component {
     handleFormSubmit = event => {
         event.preventDefault();
         console.log("button clicked!")
-        API.getWine(this.state.search)
+        API.getWines(this.state.search)
           .then(res => {
             if (res.data.status === "error") {
               throw new Error(res.data.message);
