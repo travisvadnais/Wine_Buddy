@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 const Nav = props => (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" >WineBuddy</a>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+        { <a className="navbar-brand">WineBuddy</a> }
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
         </button>
@@ -19,7 +19,10 @@ const Nav = props => (
                 <Link to="../wine_pair"><button type="button" className="btn btn-success" id="scraper">Find a Wine!</button></Link>
             </ul>
         </div>
+       
     </nav>
+
+
 )
 
 
