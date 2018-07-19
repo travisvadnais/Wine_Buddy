@@ -52,7 +52,7 @@ class Wine extends Component {
     render() {
         console.log(this.state);
         return (
-            <div>
+         <div>
                 <Nav />
                 {/* Don't mess w/ this function.  You need the 'event' in both places to prevent
                     page from refreshing */}
@@ -71,13 +71,13 @@ class Wine extends Component {
                     {this.state.wineSelection && <DropDown name="priceSelection" placeholder="Select Your Price Range" 
                     onChange={this.handleChange} items={prices}/>}
                     <br />
-                    <Button
+                    {this.state.priceSelection && <Button
                                         color="danger"
                                         type="submit"
                                         onClick={this.handleFormSubmit}
                                         size="large">
                                         Find My Wine!
-                                    </Button>
+                                    </Button>}
                     
             </div>
                 <div id="user_inputs">
@@ -94,4 +94,4 @@ class Wine extends Component {
     }
 }
 
-export default Wine
+export default Wine;
