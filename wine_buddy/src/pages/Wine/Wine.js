@@ -76,7 +76,7 @@ class Wine extends Component {
                                         type="submit"
                                         onClick={this.handleFormSubmit}
                                         size="large">
-                                        Find My Wine!
+                                        Find Your Wine!
                                     </Button>}
                     
             </div>

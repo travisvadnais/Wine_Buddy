@@ -15,7 +15,7 @@ const Nav = props => (
                 <li className="nav-item">
                     <Link to="../profile" id="saved_articles" className="nav-link" href="">My Wines</Link>
                 </li>
-                <Link to="../wine_pair"><button type="button" className="btn btn-success" id="scraper">Find a Wine!</button></Link>
+                <Link to="../wine_pair"><button type="button" className="btn btn-success" id="scraper">Find Your Wine!</button></Link>
             </ul>
         </div>
        
