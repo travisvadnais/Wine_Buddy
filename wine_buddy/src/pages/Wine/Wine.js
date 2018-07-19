@@ -24,6 +24,7 @@ class Wine extends Component {
             }
             //In order to call functions, you have to bind them to the constructor
             this.handleChange = this.handleChange.bind(this);
+            this.handleFormSubmit = this.handleFormSubmit.bind(this);
     } 
 
     //Set state when client selects a food
@@ -33,6 +34,20 @@ class Wine extends Component {
             [name]: value
         });
     };
+
+    // Set state when client clicks find my wine
+    handleFormSubmit = event => {
+        event.preventDefault();
+        console.log("button clicked!")
+        API.getWine(this.state.search)
+          .then(res => {
+            if (res.data.status === "error") {
+              throw new Error(res.data.message);
+            }
+            this.setState({ results: res.data.message, error: "" });
+          })
+          .catch(err => this.setState({ error: err.message }));
+      };
     
     render() {
         console.log(this.state);
@@ -58,6 +73,8 @@ class Wine extends Component {
                     <br />
                     <Button
                                         color="danger"
+                                        type="submit"
+                                        onClick={this.handleFormSubmit}
                                         size="large">
                                         Find My Wine!
                                     </Button>

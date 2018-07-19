@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 export default {
-// if this returns the food list can we change name to getFood ?
-// getWine 
+// get wine to return wines that fit the foodselection, wineselection, and price range upon handleformsubmit
+// named wine match?
   getWine: function(food) {
     return axios.get(`/api/wine/${food}`);
   },
