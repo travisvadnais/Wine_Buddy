@@ -19,7 +19,7 @@ class Wine extends Component {
             this.state = {
                 foodSelection:"",
                 wineSelection:"",
-                priceSelection:"",
+                priceSelection:""
             }
             //In order to call functions, you have to bind them to the constructor
             this.handleChange = this.handleChange.bind(this);
