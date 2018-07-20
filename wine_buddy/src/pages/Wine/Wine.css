@@ -1,0 +1,23 @@
+div.main_container {
+  position: relative;
+}
+
+div#user_inputs {
+  float: right;
+  position: absolute;
+  top: 180px;
+  left: 20%;
+}
+
+/* These are the bubbles that generate when the user makes a selection */
+li.selections:first-child {
+  float: left;
+}
+
+li.selections:nth-child(2){
+  float: left;
+}
+
+li.selections:nth-child(3){
+  float: right;
+}
