@@ -26,15 +26,15 @@ class Wine extends Component {
     } 
 
       
-        componentDidMount() {
-          this.loadWine();
-        }
-      
-        loadWine = () => {
-          API.getWines()
-            .then(res => this.setState({ foodSelection: res.data, wineSelection: res.data, priceSelection: res.data }))
-            .catch(err => console.log(err));
-        };
+    componentDidMount() {
+        //this.loadWine();
+    }
+    
+    loadWine = () => {
+        API.getWines()
+        .then(res => this.setState({ foodSelection: res.data, wineSelection: res.data, priceSelection: res.data }))
+        .catch(err => console.log(err));
+    };
     //Set state when client selects a food
     handleChange = (event) => {
         const {name, value} = event.target
@@ -61,39 +61,39 @@ class Wine extends Component {
         console.log(this.state);
         return (
          <div>
-                <Nav />
-                {/* Don't mess w/ this function.  You need the 'event' in both places to prevent
-                    page from refreshing */}
-                <div id="form_container">
-                    <label>
-                        Let's find you a wine based on what you're eating, wine preference, and price range!
-                    </label>
-                        <br />
-                    <DropDown name="foodSelection" placeholder="Select Your Food" onChange={this.handleChange} items={foods}/>
+            <Nav />
+            {/* Don't mess w/ this function.  You need the 'event' in both places to prevent
+                page from refreshing */}
+            <div id="form_container">
+                <label>
+                    Let's find you a wine based on what you're eating, wine preference, and price range!
+                </label>
                     <br />
+                <DropDown name="foodSelection" placeholder="Select Your Food" onChange={this.handleChange} items={foods}/>
+                <br />
 
-                    {this.state.foodSelection && <DropDown name="wineSelection" placeholder="Select Your Wine" 
-                    onChange={this.handleChange} items={wines[this.state.foodSelection]}/>}
-                    <br />
-                    
-                    {this.state.wineSelection && <DropDown name="priceSelection" placeholder="Select Your Price Range" 
-                    onChange={this.handleChange} items={prices}/>}
-                    <br />
-                    {this.state.priceSelection && <Button
-                                        color="danger"
-                                        type="submit"
-                                        onClick={this.handleFormSubmit}
-                                        size="large">
-                                        Find Your Wine!
-                                    </Button>}
+                {this.state.foodSelection && <DropDown name="wineSelection" placeholder="Select Your Wine" 
+                onChange={this.handleChange} items={wines[this.state.foodSelection]}/>}
+                <br />
+                
+                {this.state.wineSelection && <DropDown name="priceSelection" placeholder="Select Your Price Range" 
+                onChange={this.handleChange} items={prices}/>}
+                <br />
+                {this.state.priceSelection && <Button
+                                    color="danger"
+                                    type="submit"
+                                    onClick={this.handleFormSubmit}
+                                    size="large">
+                                    Find Your Wine!
+                                </Button>}
                     
             </div>
                 <div id="user_inputs">
                     <ol>
                         {/* We're going to keep the user updated as to what selections (s)he's made */}
-                        <li>{this.state.Food}</li>
-                        <li>{this.state.Wine_Type}</li>
-                        <li>{this.state.Wine_Price}</li>
+                        <li>{this.state.foodSelection}</li>
+                        <li>{this.state.wineSelection}</li>
+                        <li>{this.state.priceSelection}</li>
                     </ol>
                 </div>
                 <Footer />
