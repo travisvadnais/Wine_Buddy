@@ -7,7 +7,7 @@ const wines = {
             "Sweet Whites",
             "Rich Whites",
             "Sparkling Whites",
-            "Dessert" ["Dessert"],
+            "Dessert"
         ],
     "Hard Cheese": [
             "Sweet Whites" ,
@@ -15,8 +15,8 @@ const wines = {
             "Medium Body Reds",
             "Full Body Reds",
         ],
-         "Starches (Grains & Pastas)":
-         [
+    "Starches (Grains & Pastas)":
+        [
             "Dry Whites" ,
             "Rich Whites",
             "Sparkling Whites",
@@ -25,34 +25,34 @@ const wines = {
             "Full Body Reds",
             "Dessert" 
         ],
-        "Light Seafood" : [
-            "Sweet Whites",
-            "Rich Whites",
-            "Sparkling Whites",
+    "Light Seafood" : [
+        "Sweet Whites",
+        "Rich Whites",
+        "Sparkling Whites"
         ],
-         "Rich Seafood" : [
-            "Rich Whites",
-            "Light Body Reds",
+    "Rich Seafood" : [
+        "Rich Whites",
+        "Light Body Reds"
         ],
-        "White Meat" : [
-            "Dry Whites",
-            "Rich Whites" ,
-            "Light Body Reds",
-            "Medium Body Reds",
+    "White Meat" : [
+        "Dry Whites",
+        "Rich Whites" ,
+        "Light Body Reds",
+        "Medium Body Reds"
         ],
-         "Red Meat" : [
-            "Medium Body Reds",
-            "Full Body Reds"
-         ],
-         "Cured Meat": [
-            "Sweet Whites",
-            "Light Body Reds",
-            "Medium Body Reds",
-            "Full Body Reds"
+    "Red Meat" : [
+        "Medium Body Reds",
+        "Full Body Reds"
         ],
-        "Sweets": [
-            "Sweet Whites",
-            "Dessert" 
+    "Cured Meat": [
+        "Sweet Whites",
+        "Light Body Reds",
+        "Medium Body Reds",
+        "Full Body Reds"
+        ],
+    "Sweets": [
+        "Sweet Whites",
+        "Dessert" 
         ]
     };
 export default wines;
