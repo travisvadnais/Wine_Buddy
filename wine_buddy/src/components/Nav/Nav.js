@@ -19,7 +19,7 @@ const Nav = props => (
                 </li>
             </ul>
             <form className="form-inline">
-            <Link to="../SigninPage"><button type="button" className="btn btn-danger my-2 my-sm-0" id="sign in">Sign-In</button></Link>
+            <Link to="../Signin"><button type="button" className="btn btn-danger my-2 my-sm-0" id="sign in">Sign-In</button></Link>
             <Link to="../SignupForm"><button type="button" className="btn btn-danger my-2 my-sm-0" id="sign up">Sign-Up</button></Link>
                 <Link to="../wine_pair"><button type="button" className="btn btn-danger my-2 my-sm-0" id="scraper">Find Your Wine!</button></Link>
               </form>

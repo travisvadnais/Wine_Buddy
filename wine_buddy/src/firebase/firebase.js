@@ -1,10 +1,23 @@
 import firebase from 'firebase/app';
+import 'firebase/auth';
 
-const config = {
-    apiKey: YOUR_API_KEY,
-    authDomain: YOUR_AUTH_DOMAIN,
-    databaseURL: YOUR_DATABASE_URL,
-    projectId: YOUR_PROJECT_ID,
-    storageBucket: '',
-    messagingSenderId: YOUR_MESSAGING_SENDER_ID,
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC3VZak7xU8ecmYNcwrluAfEPuU-XhfrZE",
+    authDomain: "wine-buddy-e8cd3.firebaseapp.com",
+    databaseURL: "https://wine-buddy-e8cd3.firebaseio.com",
+    projectId: "wine-buddy-e8cd3",
+    storageBucket: "wine-buddy-e8cd3.appspot.com",
+    messagingSenderId: "952462308851"
   };
+  firebase.initializeApp(config);
+
+  if (!firebase.apps.length) {
+    firebase.initializeApp(config);
+  }
+
+const auth = firebase.auth();
+
+export {
+  auth,
+};
