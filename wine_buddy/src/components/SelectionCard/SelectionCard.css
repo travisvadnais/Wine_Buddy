@@ -1,19 +1,30 @@
+/* Styling for the entire card div */
 div.user_card {
   width: 16rem;
   height: 16rem;
-  margin-bottom: 10px;
-  margin-right: 20px;
-  border-radius: 50%;
+  margin: 0 20px 100px;
+  border-radius: 5%;
+  border: 2px double darkred;
+  box-shadow: 10px 10px darkred;
 }
-
+/* Styling for the image */
 img.user_selection {
-  margin-top: 20px;
-  width: 250px;
-  height: 200px;
-  border-radius: 50%;
-  margin: 0 auto;
+  width: 100%;
+  min-width: 100%;
+  height: 80%;
+  min-height: 80%;
+  border-radius: 5%;
 }
 
+/* Styling for Div that holds the text */
+div.card-body {
+  padding-top: 10px!important;
+}
+
+/* Styling for the text itself */
 p.card-text {
-  text-align: center;
+  padding-bottom: 10px;
+  font-family: 'Muli', sans-serif;
+  font-size: 1.2em;
+  font-weight: bolder;
 }
