@@ -6,9 +6,9 @@ import './Signin.css';
 // import API from "../../utils/API";
 import { Link } from "react-router-dom";
 
-import { SignUpLink } from './SignUp';
-import { auth } from '../firebase';
-import * as routes from '../constants/routes';
+import { SignUpLink } from '../Signup/Signup';
+import { auth } from '../../firebase/firebase';
+
 
 const SignInPage = ({ history }) =>
   <div>
@@ -47,7 +47,7 @@ class SignIn extends Component {
     auth.doSignInWithEmailAndPassword(email, password)
       .then(() => {
         this.setState(() => ({ ...INITIAL_STATE }));
-        history.push(routes.HOME);
+       history.push('../Home/Home');
       })
       .catch(error => {
         this.setState(byPropKey('error', error));
@@ -91,7 +91,7 @@ class SignIn extends Component {
   }
 }
 
-export default withRouter(SignIn);
+export default Signin;
 
 export {
   SignIn,

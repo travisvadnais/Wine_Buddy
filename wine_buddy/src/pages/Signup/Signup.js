@@ -5,7 +5,7 @@ import Footer from '../../components/Footer';
 import './Signup.css';
 // import API from "../../utils/API";
 import { Link } from "react-router-dom";
-import { auth } from '../firebase';
+import { auth } from '../../firebase/firebase';
 
 const SignUpPage = ({ history }) =>
     <div>
@@ -45,7 +45,7 @@ class SignUpForm extends Component {
           auth.doCreateUserWithEmailAndPassword(email, passwordOne)
             .then(authUser => {
               this.setState(() => ({ ...INITIAL_STATE }));
-              history.push(routes.HOME);
+               history.push('../Home/Home');
             })
             .catch(error => {
               this.setState(byPropKey('error', error));
@@ -114,10 +114,10 @@ const SignUpLink = () =>
     <p>
         Don't have an account?
     {' '}
-        <Link to={routes.SIGN_UP}>Sign Up</Link>
+        <Link to='./'>Sign Up</Link>
     </p>
 
-export default withRouter (SignUp);
+export default SignUpForm;
 
 export {
     SignUpForm,

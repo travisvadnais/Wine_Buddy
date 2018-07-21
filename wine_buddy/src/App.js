@@ -4,8 +4,8 @@ import Home from "./pages/Home";
 import Wine from "./pages/Wine";
 import Profile from "./pages/Profile";
 import NoMatch from "./pages/NoMatch";
-// import SignupForm from "./pages/SignupForm";
-// import SigninPage from "./pages/Signin";
+import SignupForm from "./pages/Signup";
+import Signin from "./pages/Signin";
 
 const App = () => (
   <Router>
@@ -18,8 +18,8 @@ const App = () => (
         <Route exact path="/wine_pair" component={Wine} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path ="/no_match" component={NoMatch} />
-        {/* <Route exact path ="/signin" component={Signin} /> */}
-        {/* <Route exact path ="/signup" component={SignupForm} /> */}
+        <Route exact path ="/signin" component={Signin} /> 
+       <Route exact path ="/signup" component={SignupForm} />
       </Switch>
     </div>
   </Router>
