@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Nav from "../../components/Nav";
-import Button from '../../components/Button';
+import SigninPage from "../../components/SigninPage";
 import Footer from '../../components/Footer';
 import './Signin.css';
 // import API from "../../utils/API";
