@@ -16,6 +16,8 @@ const App = () => (
         <Route exact path="/wine_pair" component={Wine} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path ="/no_match" component={NoMatch} />
+        <Route exact path ="/signin" component={Signin} />
+        <Route exact path ="/signup" component={Signup} />
       </Switch>
     </div>
   </Router>
