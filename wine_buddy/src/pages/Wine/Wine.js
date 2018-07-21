@@ -32,11 +32,11 @@ class Wine extends Component {
     }
     //========================== API Call for Wine ===================================//
         //Alex's function//
-    loadWine = () => {
-        API.getWines()
-        .then(res => this.setState({ foodSelection: res.data, wineSelection: res.data, priceSelection: res.data }))
-        .catch(err => console.log(err));
-    }; //End Alex's function
+    // loadWine = () => {
+    //     API.getWines()
+    //     .then(res => this.setState({ foodSelection: res.data, wineSelection: res.data, priceSelection: res.data }))
+    //     .catch(err => console.log(err));
+    // }; //End Alex's function
         
     //Start Travis' function
     //I think it'll need to look something more like this:
