@@ -15,7 +15,7 @@ const modalWines = [
     "country": "Germany",
     "price": "$39.97",
     "rating": 4.2,
-    "img": "https://wine-searcher1.freetls.fastly.net/images/labels/39/75/weingut-donnhoff-niederhauser-hermannshohle-riesling-auslese-goldkapsel-nahe-germany-10153975.jpg"
+    "img": "https://cdn.ct-static.com/labels/554097.jpg"
   },
   {
     "index": 2,

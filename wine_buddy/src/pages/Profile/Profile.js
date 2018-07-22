@@ -11,7 +11,7 @@ class Profile extends Component {
             <div>
                 <Nav />
                 {/* I built this class stack in another HW and it works for this type of thing */}
-                <h3>This is where the client's profile will load</h3>
+                <h3>Under Construction.  Come back soon!</h3>
                 <Footer />
             </div>
         );

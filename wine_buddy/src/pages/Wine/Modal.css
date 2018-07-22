@@ -1,0 +1,56 @@
+.modal-content {
+  font-family: 'Muli', sans-serif;
+  background-color: lightgray;
+  border: 10px solid white;
+  border-radius: 20%;
+}
+
+h4.modal-title {
+  font-size: 1.2em;
+}
+
+span.intro {
+  margin: 10px 10px 0 30px;
+}
+
+span#wine_name {
+  font-size: 1.5em;
+  text-align: center;
+  margin: 10px auto;
+  display: block;
+  width: 90%;
+}
+
+div.modal-header {
+  padding: 0 0 10px 0!important;
+  width: 75%;
+  margin-left: 12.5%;
+}
+
+img#modal_image {
+  width: 80%;
+  height: 350px;
+  min-width: 50%;
+  margin-left: 10%;
+  border-radius: 10%;
+  border: 2px double darkslategrey;
+}
+
+h4#price_wrapper {
+  margin-right: 18%;
+  margin-top: 5px;
+}
+span#price_span, span#rating_span {
+  font-size: .5em;
+}
+
+h4#rating_wrapper {
+  margin-right: 18%;
+}
+
+.modal-footer {
+  width: 80%;
+  margin-left: 10%;
+  padding: 5px!important;
+}
+
