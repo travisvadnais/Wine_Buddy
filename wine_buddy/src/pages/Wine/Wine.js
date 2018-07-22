@@ -4,6 +4,7 @@ import SelectionCard from "../../components/SelectionCard";
 import Footer from '../../components/Footer';
 import { Button } from 'reactstrap';
 import './Wine.css';
+import './Modal.css';
 import prices from '../../pages/Wine/prices';
 import wines from '../../pages/Wine/wines';
 import winetypes from '../../pages/Wine/winetypes';
@@ -224,17 +225,20 @@ class Wine extends Component {
             {/* ==================== Start Modal ========================================================*/}
             <div>
                 <Modal show={this.state.show} onHide={this.handleClose} animation={false}>
-                <Modal.Title>Your wine is . . . 
+                <Modal.Title>
                     <Modal.Header closeButton></Modal.Header>
+                    <span className="intro">Your wine is . . .</span>
+                    <br/> 
+                    <span id="wine_name">{modalWines[this.state.wineIndex].name}</span>
+                    
                 </Modal.Title>
                 <Modal.Body>
-                    <h4>{modalWines[this.state.wineIndex].name}</h4>
-                    <img src={modalWines[this.state.wineIndex].img} alt="wine"/>            
+                    <img id="modal_image" src={modalWines[this.state.wineIndex].img} alt="wine"/>            
                 </Modal.Body>
                 <Modal.Footer>
-                    <h4>{modalWines[this.state.wineIndex].price}</h4>
-                    <h4>{modalWines[this.state.wineIndex].rating}</h4>
-                    <Button onClick={this.handleClose}>Close</Button>
+                    <h4 id="price_wrapper"><span id="price_span">{"Price:  "}</span>{modalWines[this.state.wineIndex].price}</h4>
+                    <h4 id="rating_wrapper"><span id="rating_span">{"Rating:  "}</span>{modalWines[this.state.wineIndex].rating}</h4>
+                    <Button className="close_button" onClick={this.handleClose}>Close</Button>
                 </Modal.Footer>
                 </Modal>
             </div>
