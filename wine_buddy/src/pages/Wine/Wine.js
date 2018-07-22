@@ -7,10 +7,14 @@ import './Wine.css';
 import prices from '../../pages/Wine/prices';
 import wines from '../../pages/Wine/wines';
 import winetypes from '../../pages/Wine/winetypes';
+//modalWines are hardcoded.  If you get this deployed w/ routes and an actual DB, you can delete this
+import modalWines from './winesForModal';
+// Modal was a component built into the react-bootstrap package you downloaded
+import Modal from 'react-bootstrap/lib/Modal'
 import foods from '../../pages/Wine/foods';
 import DropDown from '../../components/DropDown';
-
-import API from "../../utils/API";
+//import { set } from "mongoose";
+//import API from "../../utils/API";
 
 class Wine extends Component {
     constructor(props) {
@@ -19,38 +23,63 @@ class Wine extends Component {
             this.state = {
                 foodSelection:"",
                 wineSelection:"",
-                priceSelection:""
+                priceSelection:"",
+                show: false,
+                //wineIndex is part of the hardcoded wines.  You can delete if you get DB connected
+                wineIndex: 0
             }
             //In order to call functions, you have to bind them to the constructor
             this.handleChange = this.handleChange.bind(this);
             this.handleFormSubmit = this.handleFormSubmit.bind(this);
+            //handleShow & handleClose are for the modal
+            this.handleShow = this.handleShow.bind(this);
+            this.handleClose = this.handleClose.bind(this);
+            this.getWineFunction = this.getWineFunction.bind(this);
     } 
 
-      
-    componentDidMount() {
-        //this.loadWine();
-    }
     //========================== API Call for Wine ===================================//
-        //Alex's function//
-    // loadWine = () => {
-    //     API.getWines()
-    //     .then(res => this.setState({ foodSelection: res.data, wineSelection: res.data, priceSelection: res.data }))
-    //     .catch(err => console.log(err));
-    // }; //End Alex's function
-        
-    //Start Travis' function
-    //I think it'll need to look something more like this:
-    loadWine = () => {
-        API.getWines({
-            winetypes: "list of wine types that go w/ their wine selection",
-            //So we're going to need a fx to convert the this.state.wineSelection to the list of wines that go with it in the 'winetypes' variable,
-            price: this.state.priceSelection,
-        })
-        //We need to pass these values into `getWines` so that we can use them to query the DB.
-        .then(res => {
-        //This is where we'll put the logic for what we want to do when the Wine comes back.  I.E. put it in a modal or whatever.  We don't need any setState stuff b/c the state is already set to the selections they made from the dropdown. 
-        }) 
-        .catch(err => console.log(err));
+    //=========================
+    //Note: This is not being used for the initial deploy.  You'll need this if you get the DB working
+    loadWine = (wine, price) => {
+        //userWine will store the return from the winetypes API
+        let userWine;
+        //Switch case will take the user wine selection and pull back the types of wine that go with it
+        switch (wine) {
+            case "Sweet Whites":
+                userWine = winetypes["Sweet Whites"];
+                break;
+            case "Rich Whites":
+                userWine = winetypes["Rich Whites"];
+                break;
+            case "Sparkling Whites":
+                userWine = winetypes["Sparkling Whites"];
+                break;
+            case "Dessert":
+                userWine = winetypes["Dessert"];
+                break;
+            case "Dry Whites":
+                userWine = winetypes["Dry Whites"];
+                break;
+            case "Light Body Reds":
+                userWine = winetypes["Light Body Reds"];
+                break;
+            case "Medium Body Reds":
+                userWine = winetypes["Medium Body Reds"];
+                break;
+            default:
+                userWine = winetypes["Full Body Reds"];
+                break;
+        }
+        //userWine returns an array.  This fx will randomly pull one element from that array to query DB
+        if (userWine.length > 1) {
+            userWine = userWine[Math.floor(Math.random() * userWine.length)];
+        }
+        //Send the info to API.js - not working.  Commenting out for v1.
+        // API.getWines(userWine, price)
+        // .then(res => {
+        // //This is where we'll put the logic for what we want to do when the Wine comes back.  I.E. put it in a modal or whatever.  We don't need any setState stuff b/c the state is already set to the selections they made from the dropdown. 
+        // }) 
+        // .catch(err => console.log(err));
     }
     //======================
     //======================= End API Call ===========================================//
@@ -66,17 +95,85 @@ class Wine extends Component {
 
     // Set state when client clicks find my wine
     handleFormSubmit = event => {
-        event.preventDefault();
+        //event.preventDefault();
         console.log("button clicked!")
-        API.getWines(this.state.search)
-          .then(res => {
-            if (res.data.status === "error") {
-              throw new Error(res.data.message);
-            }
-            this.setState({ results: res.data.message, error: "" });
-          })
-          .catch(err => this.setState({ error: err.message }));
-      };
+        this.loadWine(this.state.wineSelection, this.state.priceSelection);
+        //Pull in the getWineFx from another file.  This will grab one of the hardcoded wines in the winesForModal.js file
+        this.getWineFunction(this.state.wineSelection, this.state.priceSelection);
+        this.handleShow();
+    };
+    //Nonsense function to pull the hardcoded wines based on user input
+    getWineFunction = (wine, price) => {
+        if (wine === "Sweet Whites" && price === "under $20") {
+            this.setState({wineIndex: 0})}
+        else if (wine === "Sweet Whites" && price === "$20-$40") {
+            this.setState({wineIndex: 1})}
+        else if (wine === "Sweet Whites" && price === "$41-$80") {
+            this.setState({wineIndex: 2})}
+        else if (wine === "Sweet Whites" && price === "over $80") {
+            this.setState({wineIndex: 3})}
+        else if (wine === "Rich Whites" && price === "under $20") {
+            this.setState({wineIndex: 4})}
+        else if (wine === "Rich Whites" && price === "$20-$40") {
+            this.setState({wineIndex: 5})}
+        else if (wine === "Rich Whites" && price === "$41-$80") {
+            this.setState({wineIndex: 6})}
+        else if (wine === "Rich Whites" && price === "over $80") {
+            this.setState({wineIndex: 7})}
+        else if (wine === "Sparkling Whites" && price === "under $20") {
+            this.setState({wineIndex: 8})}
+        else if (wine === "Sparkling Whites" && price === "$20-$40") {
+            this.setState({wineIndex: 9})}
+        else if (wine === "Sparkling Whites" && price === "$41-$80") {
+            this.setState({wineIndex: 10})}
+        else if (wine === "Sparkling Whites" && price === "over $80") {
+            this.setState({wineIndex: 11})}  
+        else if (wine === "Dessert" && price === "under $20") {
+            this.setState({wineIndex: 12})}
+        else if (wine === "Dessert" && price === "$20-$40") {
+            this.setState({wineIndex: 13})}
+        else if (wine === "Dessert" && price === "$41-$80") {
+            this.setState({wineIndex: 14})}
+        else if (wine === "Dessert" && price === "over $80") {
+            this.setState({wineIndex: 15})}   
+        else if (wine === "Dry Whites" && price === "under $20") {
+            this.setState({wineIndex: 16})}
+        else if (wine === "Dry Whites" && price === "$20-$40") {
+            this.setState({wineIndex: 17})}
+        else if (wine === "Dry Whites" && price === "$41-$80") {
+            this.setState({wineIndex: 18})}
+        else if (wine === "Dry Whites" && price === "over $80") {
+            this.setState({wineIndex: 19})}  
+        else if (wine === "Medium Body Reds" && price === "under $20") {
+            this.setState({wineIndex: 20})}
+        else if (wine === "Medium Body Reds" && price === "$20-$40") {
+            this.setState({wineIndex: 21})}
+        else if (wine === "Medium Body Reds" && price === "$41-$80") {
+            this.setState({wineIndex: 22})}
+        else if (wine === "Medium Body Reds" && price === "over $80") {
+            this.setState({wineIndex: 23})}  
+        else if (wine === "Full Body Reds" && price === "under $20") {
+            this.setState({wineIndex: 24})}
+        else if (wine === "Full Body Reds" && price === "$20-$40") {
+            this.setState({wineIndex: 25})}
+        else if (wine === "Full Body Reds" && price === "$41-$80") {
+            this.setState({wineIndex: 26})}
+        else if (wine === "Full Body Reds" && price === "over $80") {
+            this.setState({wineIndex: 27})}  
+        else if (wine === "Light Body Reds" && price === "under $20") {
+            this.setState({wineIndex: 28})}
+        else if (wine === "Light Body Reds" && price === "$20-$40") {
+            this.setState({wineIndex: 29})}
+        else if (wine === "Light Body Reds" && price === "$41-$80") {
+            this.setState({wineIndex: 30})}
+        else if (wine === "Light Body Reds" && price === "over $80") {
+            this.setState({wineIndex: 31})}  
+    }
+
+//====================== Start Modal Functions ==========================================//
+    handleClose() {this.setState({ show: false });}
+    handleShow() {this.setState({ show: true });}
+//========================== End Modal Functions ======================================//
     
     render() {
         console.log(this.state);
@@ -109,26 +206,41 @@ class Wine extends Component {
                                 </Button>}
                     
             </div>
-                <div id="user_inputs">
-                    <ul>
-                        {/* This will populate a bubble for every selection the user makes */}
-                        <li className="selections">{this.state.foodSelection && <SelectionCard
-                                                            selection={this.state.foodSelection}
-                                                            image="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fpeopledotcom.files.wordpress.com%2F2018%2F02%2Fihop-pancakes-ap_435762852572.jpg%3Fw%3D2000&w=700&q=85"
-                                                            alt="Food"
-                                                            />}</li>
-                        <li className="selections">{this.state.wineSelection && <SelectionCard
-                                                            selection={this.state.wineSelection}
-                                                            image="https://media.mnn.com/assets/images/2017/04/various%20wine%20bottles.jpg.653x0_q80_crop-smart.jpg"
-                                                            alt="Wine"/>}</li>
-                        <li className="selections">{this.state.priceSelection && <SelectionCard
-                                                            selection={this.state.priceSelection}
-                                                            image="https://thumbs.dreamstime.com/b/green-dollar-sign-image-many-30555081.jpg"
-                                                            alt="Dollars"/>}</li>
-                    </ul>
-                </div>
-                <Footer />
+            <div id="user_inputs">
+                <ul>
+                    {/* This will populate a bubble for every selection the user makes */}
+                    <li className="selections">{this.state.foodSelection && <SelectionCard
+                                                        selection={this.state.foodSelection}
+                                                        alt="Food"/>}</li>
+                    <li className="selections">{this.state.wineSelection && <SelectionCard
+                                                        selection={this.state.wineSelection}
+                                                        alt="Wine"/>}</li>
+                    <li className="selections">{this.state.priceSelection && <SelectionCard
+                                                        selection={this.state.priceSelection}
+                                                        alt="Dollars"/>}</li>
+                </ul>
+            </div>   
+            
+            {/* ==================== Start Modal ========================================================*/}
+            <div>
+                <Modal show={this.state.show} onHide={this.handleClose} animation={false}>
+                <Modal.Title>Your wine is . . . 
+                    <Modal.Header closeButton></Modal.Header>
+                </Modal.Title>
+                <Modal.Body>
+                    <h4>{modalWines[this.state.wineIndex].name}</h4>
+                    <img src={modalWines[this.state.wineIndex].img} alt="wine"/>            
+                </Modal.Body>
+                <Modal.Footer>
+                    <h4>{modalWines[this.state.wineIndex].price}</h4>
+                    <h4>{modalWines[this.state.wineIndex].rating}</h4>
+                    <Button onClick={this.handleClose}>Close</Button>
+                </Modal.Footer>
+                </Modal>
             </div>
+            {/* ====================== End Modal ========================================================= */}
+            <Footer />  
+        </div> //End Main container
         );
     }
 }
