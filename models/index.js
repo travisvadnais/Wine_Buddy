@@ -1,4 +1,4 @@
 module.exports = {
     Wine: require('./wine'),
-    UserFavorites: require('./UserFavorites')
+    UserFavorites: require('./userFavorites')
 }

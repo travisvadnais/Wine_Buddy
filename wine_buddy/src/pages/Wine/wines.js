@@ -15,7 +15,7 @@ const wines = {
             "Medium Body Reds",
             "Full Body Reds",
         ],
-    "Starches (Grains & Pastas)":
+    "Starches":
         [
             "Dry Whites" ,
             "Rich Whites",

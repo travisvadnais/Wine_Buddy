@@ -21,3 +21,7 @@ li.selections:nth-child(2){
 li.selections:nth-child(3){
   float: right;
 }
+
+body {
+  background-image: url("http://paperlief.com/images/tuscany-vineyard-wallpaper-2.jpg");
+}

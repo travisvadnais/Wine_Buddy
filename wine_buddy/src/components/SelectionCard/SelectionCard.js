@@ -59,7 +59,7 @@ class SelectionCard extends Component {
       case "Hard Cheese":
         this.setState({src: foodPics[1]})
         break;
-      case "Starches (Grains & Pastas)":
+      case "Starches":
         this.setState({src: foodPics[2]})
         break;
       case "Light Seafood":
