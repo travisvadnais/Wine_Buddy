@@ -1,9 +1,10 @@
 nav.fixed-bottom {
   height: 70px;
   width: 100%;
-  background-color: black!important;
-  border-top: 2px solid darkgoldenrod;
-  color: darkgoldenrod;
+  background-color: darkgray;
+  border-top: 2px solid darkred;
+  color: darkred;
+  opacity: .5;
 }
 
 /* nav.fixed-bottom a {

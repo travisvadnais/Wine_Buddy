@@ -1,7 +1,12 @@
-button.get_started {
-    width: 64%;
-    margin-left: 18%;
+.btn-danger {
     background-color: darkred;
     border: darkred;
     box-shadow: darkred
+}
+
+.navbar {
+    width: 100%;
+
+ 
+  
 }

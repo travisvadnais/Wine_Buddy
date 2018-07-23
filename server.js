@@ -18,7 +18,7 @@ app.use(logger("dev"));
 //BodyParser will handle form submissions
 app.use(bodyParser.urlencoded({extended: true}));
 //Serve public folder as static directory
-app.use(express.static("public"));
+// app.use(express.static("public"));
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
