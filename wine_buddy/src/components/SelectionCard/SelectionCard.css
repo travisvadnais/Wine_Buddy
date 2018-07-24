@@ -24,6 +24,7 @@ div.card-body {
 /* Styling for the text itself */
 p.card-text {
   margin-bottom: 0px;
+  margin-top: 0px;
   font-family: 'Philosopher', sans-serif;
   font-weight: bolder;
 }

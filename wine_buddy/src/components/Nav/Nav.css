@@ -15,6 +15,10 @@
 
 }
 
+nav.navbar-brand {
+    background-color: darkred!important;
+}
+
 .navbar{
     width: 100%;
     background-color: darkred;
