@@ -2,6 +2,9 @@ div.main_container {
   position: relative;
 }
 
+div.form_container{
+  padding: 150px
+}
 label{
   font-style: italic;
   color: darkred;
