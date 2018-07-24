@@ -7,12 +7,11 @@
 
 .navbar-collapse {
     width: 100%;
-    background-color: darkgrey;
+    background-color: darkred;
     height: 70px;
     width: 100%;
-    background-color: darkgray;
-    border-top: 2px solid darkred;
-    color: darkred;
+    border-top: 2px solid darkgoldenrod;
+    color: darkgrey;
 }
 
 .navbar-expand-lg{
@@ -29,4 +28,9 @@
      font-size: 16px;
  }
 
+ h1 {
+     color: darkgrey;
+     font-family: 'Philosopher', sans-serif;
+
+ }
 

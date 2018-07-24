@@ -17,6 +17,8 @@ class Home extends Component {
             <div>
                 <Nav />
                 {/* I built this class stack in another HW and it works for this type of thing */}
+                        <p className="text-center"><strong>Our goal is to give our users the ultimate dining experience by pairing their cuisine with wine
+                        that compliments it the best, no matter what your price range may be.</strong></p><hr/>
                 <div className="d-flex flex-wrap justify-content-center col-sm-12 mx-auto carousel">
                     {
                     instructions

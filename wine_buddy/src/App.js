@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Wine from "./pages/Wine";
 import Profile from "./pages/Profile";
-import NoMatch from "./pages/NoMatch";
+
 // import SignupForm from "./pages/SignupForm";
 // import SigninPage from "./pages/Signin";
 
@@ -17,7 +17,7 @@ const App = () => (
         <Route exact path="/home" component={Home} />
         <Route exact path="/wine_pair" component={Wine} />
         <Route exact path="/profile" component={Profile} />
-        <Route exact path ="/no_match" component={NoMatch} />
+        
         {/* <Route exact path ="/signin" component={Signin} /> */}
         {/* <Route exact path ="/signup" component={SignupForm} /> */}
       </Switch>

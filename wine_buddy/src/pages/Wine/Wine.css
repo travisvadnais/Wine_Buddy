@@ -20,6 +20,7 @@ div#user_inputs {
 /* These are the bubbles that generate when the user makes a selection */
 li.selections:first-child {
   float: left;
+  color: darkred;
 }
 
 li.selections:nth-child(2){
@@ -37,3 +38,5 @@ body {
 .close_button{
   background-color: darkred;
 }
+
+

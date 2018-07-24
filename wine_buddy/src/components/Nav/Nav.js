@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import './Nav.css'
+import './Nav.css';
+
 
 const Nav = props => (
 
@@ -9,7 +10,7 @@ const Nav = props => (
             <img className="nav_p" alt="wine logo" src="https://images.clipartuse.com/1e618854f1003f98adf3fd5f4d482f52_clinking-wine-glasses-stickers-by-libberdoodle-redbubble_771-800.jpeg" height="50" width="50" />
             <ul className="navbar-nav">
                 <li className="nav-item">
-                    <Link to="../home" className="nav-link" id="go_home" href=""><h1>Wine Buddy</h1> <span className="sr-only">(current)</span></Link>
+                    <Link to="../home" className="nav-link" id="go_home" ><h1>Wine Buddy</h1> <span className="sr-only">(current)</span></Link>
                 </li>
 
             </ul>
@@ -22,8 +23,8 @@ const Nav = props => (
                     <br/>
                     
                         <Link to="../wine_pair"><button type="button" className="btn btn-warning btn-vertical my-2 my-sm-0" id="scraper">Find Your Wine!</button></Link>
+                   </form> 
                     
-            </form>
         </div>
 
     </nav>

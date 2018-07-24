@@ -1,7 +1,15 @@
+body{
+  font-family: 'Philosopher', sans-serif;
+}
 .carousel {
     margin-top: 20px;
     
   }
 
-
+p{
+  align-content: center;
+  margin-top: 20px;
+  color: darkred;
+  font-style: italic
+}
   

@@ -18,13 +18,12 @@ img.user_selection {
 
 /* Styling for Div that holds the text */
 div.card-body {
-  padding-top: 10px!important;
+  padding-top: 5px!important;
 }
 
 /* Styling for the text itself */
 p.card-text {
-  padding-bottom: 10px;
-  font-family: 'Muli', sans-serif;
-  font-size: 1.2em;
+  margin-bottom: 0px;
+  font-family: 'Philosopher', sans-serif;
   font-weight: bolder;
 }

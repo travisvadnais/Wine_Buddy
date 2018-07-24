@@ -186,8 +186,7 @@ class Wine extends Component {
             <div id="form_container">
                 <label>
                     Let's find you a wine based on what you're eating, wine preference, and price range! <br/>
-                    Our goal is to give our users the ultimate dining experience by pairing their cuisine with wine
-             that compliments the best, no matter what your price range may be.
+                    
                 </label>
                     <br />
                 <DropDown name="foodSelection" placeholder="Select Your Food" onChange={this.handleChange} items={foods}/>
