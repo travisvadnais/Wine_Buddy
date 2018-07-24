@@ -8,14 +8,16 @@
 .navbar-collapse {
     width: 100%;
     background-color: darkred;
-    height: 70px;
+    height: 100px;
     width: 100%;
-    border-top: 2px solid darkgoldenrod;
+    border: 5px solid darkgoldenrod;
     color: darkgrey;
+
 }
 
-.navbar-expand-lg{
-    width: 100%
+.navbar{
+    width: 100%;
+    background-color: darkred;
 }
 
 .form-inline-right{
@@ -25,7 +27,9 @@
 
 }
  .nav_p{
-     font-size: 16px;
+     font-size: 20px;
+     padding-left: 5px;
+     
  }
 
  h1 {

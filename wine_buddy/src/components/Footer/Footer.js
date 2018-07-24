@@ -4,7 +4,7 @@ import "./Footer.css"
 const Footer = () => (
   <nav className="navbar fixed-bottom navbar-light bg-light">
     <div id="footer-left">
-      <img className="footer_p" alt="wine logo" src="https://images.clipartuse.com/1e618854f1003f98adf3fd5f4d482f52_clinking-wine-glasses-stickers-by-libberdoodle-redbubble_771-800.jpeg" />
+      <img className="footer_p" alt="wine logo" src="https://img.freepik.com/free-vector/set-transparent-glasses-with-white-and-red-wine_1441-111.jpg?size=338&ext=jpg" />
       <p className="footer_p"><strong>Wine Buddy</strong></p><p className="footer_p"><span><strong>&#169;</strong></span> <strong> 2018 </strong> </p>
     </div>
     <div id="footer-right">

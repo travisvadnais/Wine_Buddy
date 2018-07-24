@@ -5,9 +5,9 @@ import './Nav.css';
 
 const Nav = props => (
 
-    <nav className="navbar navbar-expand-lg navbar-brand navbar-light bg-light justify-content-between">
+    <nav className="navbar navbar-expand-lg navbar-brand navbar-light bg-light">
         <div className="collapse navbar-collapse">
-            <img className="nav_p" alt="wine logo" src="https://images.clipartuse.com/1e618854f1003f98adf3fd5f4d482f52_clinking-wine-glasses-stickers-by-libberdoodle-redbubble_771-800.jpeg" height="50" width="50" />
+            <img className="nav_p" alt="wine logo" src="https://img.freepik.com/free-vector/set-transparent-glasses-with-white-and-red-wine_1441-111.jpg?size=338&ext=jpg" height="45" width="50" />
             <ul className="navbar-nav">
                 <li className="nav-item">
                     <Link to="../home" className="nav-link" id="go_home" ><h1>Wine Buddy</h1> <span className="sr-only">(current)</span></Link>
