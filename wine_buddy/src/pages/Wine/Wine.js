@@ -185,7 +185,9 @@ class Wine extends Component {
                 page from refreshing */}
             <div id="form_container">
                 <label>
-                    Let's find you a wine based on what you're eating, wine preference, and price range!
+                    Let's find you a wine based on what you're eating, wine preference, and price range! <br/>
+                    Our goal is to give our users the ultimate dining experience by pairing their cuisine with wine
+             that compliments the best, no matter what your price range may be.
                 </label>
                     <br />
                 <DropDown name="foodSelection" placeholder="Select Your Food" onChange={this.handleChange} items={foods}/>
@@ -199,7 +201,7 @@ class Wine extends Component {
                 onChange={this.handleChange} items={prices}/>}
                 <br />
                 {this.state.priceSelection && <Button
-                                    color="danger"
+                                    className="btn-warning"
                                     type="submit"
                                     onClick={this.handleFormSubmit}
                                     size="large">
@@ -238,7 +240,7 @@ class Wine extends Component {
                 <Modal.Footer>
                     <h4 id="price_wrapper"><span id="price_span">{"Price:  "}</span>{modalWines[this.state.wineIndex].price}</h4>
                     <h4 id="rating_wrapper"><span id="rating_span">{"Rating:  "}</span>{modalWines[this.state.wineIndex].rating}</h4>
-                    <Button className="close_button" onClick={this.handleClose}>Close</Button>
+                    <Button className="close_button btn-warning" onClick={this.handleClose}>Close</Button>
                 </Modal.Footer>
                 </Modal>
             </div>

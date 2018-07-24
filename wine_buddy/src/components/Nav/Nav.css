@@ -1,12 +1,32 @@
-.btn-danger {
+.btn-warning {
     background-color: darkred;
     border: darkred;
-    box-shadow: darkred
+    box-shadow: darkred;
+    color: darkgrey
 }
 
-.navbar {
+.navbar-collapse {
     width: 100%;
-
- 
-  
+    background-color: darkgrey;
+    height: 70px;
+    width: 100%;
+    background-color: darkgray;
+    border-top: 2px solid darkred;
+    color: darkred;
 }
+
+.navbar-expand-lg{
+    width: 100%
+}
+
+.form-inline-right{
+    float: right;
+    width: 80%;
+    text-align: right;
+
+}
+ .nav_p{
+     font-size: 16px;
+ }
+
+

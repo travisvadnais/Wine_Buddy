@@ -2,6 +2,11 @@ div.main_container {
   position: relative;
 }
 
+label{
+  font-style: italic;
+  color: darkred;
+}
+
 div#user_inputs {
   float: right;
   position: absolute;
@@ -24,4 +29,8 @@ li.selections:nth-child(3){
 
 body {
   background-image: url("http://paperlief.com/images/tuscany-vineyard-wallpaper-2.jpg");
+}
+
+.close_button{
+  background-color: darkred;
 }

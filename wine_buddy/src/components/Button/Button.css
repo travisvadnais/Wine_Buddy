@@ -3,5 +3,6 @@ button.get_started {
     margin-left: 18%;
     background-color: darkred;
     border: darkred;
-    box-shadow: darkred
+    box-shadow: darkred;
+    color: darkgray;
 }
