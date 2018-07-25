@@ -37,6 +37,18 @@ body {
 
 .close_button{
   background-color: darkred;
+  font-family: 'Philosopher', sans-serif;
 }
+ label {
+  width: 300px;
+  height: 100%;
+  padding: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: 2px solid darkred;
+  font-size: 16px;
+
+ }
+
 
 

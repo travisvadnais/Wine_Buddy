@@ -75,12 +75,7 @@ class Wine extends Component {
         if (userWine.length > 1) {
             userWine = userWine[Math.floor(Math.random() * userWine.length)];
         }
-        //Send the info to API.js - not working.  Commenting out for v1.
-        // API.getWines(userWine, price)
-        // .then(res => {
-        // //This is where we'll put the logic for what we want to do when the Wine comes back.  I.E. put it in a modal or whatever.  We don't need any setState stuff b/c the state is already set to the selections they made from the dropdown. 
-        // }) 
-        // .catch(err => console.log(err));
+ 
     }
     //======================
     //======================= End API Call ===========================================//
@@ -185,7 +180,8 @@ class Wine extends Component {
                 page from refreshing */}
             <div id="form_container">
                 <label>
-                    Let's find you a wine based on what you're eating, wine preference, and price range! <br/>
+                    <strong>Let's find you a wine based on what you're eating, wine preference from list matching your cuisine, and price range!</strong> <br/>
+            
                     
                 </label>
                     <br />
